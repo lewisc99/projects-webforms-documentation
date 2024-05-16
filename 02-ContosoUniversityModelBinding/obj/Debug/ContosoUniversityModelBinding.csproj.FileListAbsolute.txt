@@ -24,3 +24,6 @@ D:\arquivos\programation\workspace-Csharp\2024\month-5\01-dotnet-webforms-projec
 D:\arquivos\programation\workspace-Csharp\2024\month-5\01-dotnet-webforms-projects\02-ContosoUniversityModelBinding\bin\EntityFramework.SqlServer.dll
 D:\arquivos\programation\workspace-Csharp\2024\month-5\01-dotnet-webforms-projects\02-ContosoUniversityModelBinding\bin\EntityFramework.xml
 D:\arquivos\programation\workspace-Csharp\2024\month-5\01-dotnet-webforms-projects\02-ContosoUniversityModelBinding\bin\EntityFramework.SqlServer.xml
+D:\arquivos\programation\workspace-Csharp\2024\month-5\01-dotnet-webforms-projects\02-ContosoUniversityModelBinding\obj\Debug\ContosoUniversityModelBinding.Migrations.AddEnrollmentDate.resources
+D:\arquivos\programation\workspace-Csharp\2024\month-5\01-dotnet-webforms-projects\02-ContosoUniversityModelBinding\obj\Debug\ContosoUniversityModelBinding.csproj.GenerateResource.cache
+D:\arquivos\programation\workspace-Csharp\2024\month-5\01-dotnet-webforms-projects\02-ContosoUniversityModelBinding\bin\JuiceUI.dll

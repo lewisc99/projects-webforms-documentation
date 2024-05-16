@@ -30,6 +30,10 @@ namespace ContosoUniversityModelBinding.Models
         public AcademicYear Year { get; set; }
 
         public virtual ICollection<Enrollment> Enrollments { get; set; }
+
+        [Range(typeof(DateTime), "01/01/2013", "1/1/3000", ErrorMessage = "Please provide an enrollment date after 1/1/2013")]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:d}")]
+        public DateTime EnrollmentDate { get; set; }
     }
 
     public class Enrollment

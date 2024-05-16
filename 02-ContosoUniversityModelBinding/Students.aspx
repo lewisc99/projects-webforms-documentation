@@ -24,7 +24,8 @@
             <asp:DynamicField DataField="StudentID" />
             <asp:DynamicField DataField="LastName" />
             <asp:DynamicField DataField="FirstName" />
-            <asp:DynamicField DataField="Year" />          
+            <asp:DynamicField DataField="Year" />
+            <asp:DynamicField DataField="EnrollmentDate" />
             <asp:TemplateField HeaderText="Total Credits">
               <ItemTemplate>
                 <asp:Label Text="<%# Item.Enrollments.Sum(en => en.Course.Credits) %>" 
