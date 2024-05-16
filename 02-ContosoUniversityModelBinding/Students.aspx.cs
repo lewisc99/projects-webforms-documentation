@@ -6,6 +6,8 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.Entity; // Import necessary namespace
+using System.Data.Entity.Infrastructure;
+using System.Web.ModelBinding;
 
 
 namespace ContosoUniversityModelBinding
@@ -16,31 +18,59 @@ namespace ContosoUniversityModelBinding
         {
 
         }
-        public IQueryable<Student> studentsGrid_GetData()
+
+        public IQueryable<Student> studentsGrid_GetData([Control] AcademicYear? displayYear)
         {
             SchoolContext db = new SchoolContext();
             var query = db.Students.Include(s => s.Enrollments.Select(e => e.Course));
-            var teste = db.Students.Include(s => s.Enrollments.Select(e => e.Course)).ToList();
+
+            if (displayYear != null)
+            {
+                query = query.Where(s => s.Year == displayYear);
+            }
+
             return query;
         }
 
-        // The id parameter name should match the DataKeyNames value set on the control
-        public void studentsGrid_UpdateItem(int id)
+        public void studentsGrid_UpdateItem(int studentID)
         {
-            Student item = null;
-            // Load the item here, e.g. item = MyDataLayer.Find(id);
-            if (item == null)
+            using (SchoolContext db = new SchoolContext())
             {
-                // The item wasn't found
-                ModelState.AddModelError("", String.Format("Item with id {0} was not found", id));
-                return;
-            }
-            TryUpdateModel(item);
-            if (ModelState.IsValid)
-            {
-                // Save changes here, e.g. MyDataLayer.SaveChanges();
+                Student item = null;
+                item = db.Students.Find(studentID);
+                if (item == null)
+                {
+                    ModelState.AddModelError("",
+                      String.Format("Item with id {0} was not found", studentID));
+                    return;
+                }
 
+                TryUpdateModel(item);
+                if (ModelState.IsValid)
+                {
+                    db.SaveChanges();
+                }
             }
         }
+
+        public void studentsGrid_DeleteItem(int studentID)
+        {
+            using (SchoolContext db = new SchoolContext())
+            {
+                var item = new Student { StudentID = studentID };
+                db.Entry(item).State = EntityState.Deleted;
+                try
+                {
+                    db.SaveChanges();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    ModelState.AddModelError("",
+                      String.Format("Item with id {0} no longer exists in the database.", studentID));
+                }
+            }
+        }
+
+       
     }
 }

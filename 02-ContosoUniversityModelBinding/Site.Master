@@ -46,7 +46,7 @@
                 </button>
                 <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
-                        <li><a runat="server" href="~/">Home</a></li>
+                        <li><a runat="server" href="~/" class="mr-2">Home</a></li>
                         <li><a runat="server" href="~/Students">Students</a></li>
                     </ul>
                         <a class="navbar-brand" runat="server" href="~/">Contoso University</a>
