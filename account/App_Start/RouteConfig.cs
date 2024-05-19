@@ -13,6 +13,13 @@ namespace account
             var settings = new FriendlyUrlSettings();
             settings.AutoRedirectMode = RedirectMode.Permanent;
             routes.EnableFriendlyUrls(settings);
+
+            // Define custom route for "mybuys"
+            routes.MapPageRoute(
+                "admin",            // Route name
+                "admin-route",                 // URL pattern
+                "~/admin.aspx"           // Physical file path
+            );
         }
     }
 }
