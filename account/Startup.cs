@@ -80,6 +80,8 @@ namespace account
                         userManager.AddToRole(user.Id,"Admin");
                     }
                 }
+
+         
             }
         }
     }
