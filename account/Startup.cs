@@ -81,7 +81,20 @@ namespace account
                     }
                 }
 
-         
+                if (!roleManager.RoleExists("User"))
+                {
+                    var role = new IdentityRole { Name = "User" };
+                    roleManager.Create(role);
+
+                    // Create default user
+                    var user = new ApplicationUser { UserName = "user",Email = "user@example.com" };
+                    string userPassword = "User@123";
+                    var result = userManager.Create(user,userPassword);
+                    if (result.Succeeded)
+                    {
+                        userManager.AddToRole(user.Id,"User");
+                    }
+                }
             }
         }
     }
