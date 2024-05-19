@@ -13,9 +13,12 @@ namespace account.account
     {
         protected void Page_Load(object sender,EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                // Clear the error message
+                ErrorMessage.Text = string.Empty;
+            }
         }
-
         protected void LoginButton_Click(object sender,EventArgs e)
         {
             var userManager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
