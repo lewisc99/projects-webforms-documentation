@@ -39,9 +39,6 @@
         </asp:ScriptManager>
 
         <div class="container body-content">
-            <asp:HyperLink ID="lnkHome" runat="server"
-                NavigateUrl="~/NestedMasterPages/Default.aspx"
-                Text="Nested Master Pages Tutorial (Simple)" />
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
             <hr />
