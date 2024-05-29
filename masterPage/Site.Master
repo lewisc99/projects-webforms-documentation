@@ -16,6 +16,18 @@
     <webopt:bundlereference runat="server" path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
+    <style>
+        #topContent {
+            text-align: right;
+            background-color: #600;
+            color: White;
+            font-size: x-large;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px;
+            height: 50px;
+        }
+    </style>
 </head>
 <body>
     <form runat="server">
@@ -38,26 +50,27 @@
             </Scripts>
         </asp:ScriptManager>
 
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark">
-            <div class="container">
-                <a class="navbar-brand" runat="server" href="~/">Nome do aplicativo</a>
-                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="Alternar a navegação" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item"><a class="nav-link" runat="server" href="~/">Página Inicial</a></li>
-                        <li class="nav-item"><a class="nav-link" runat="server" href="~/About">Sobre</a></li>
-                        <li class="nav-item"><a class="nav-link" runat="server" href="~/Contact">Contato</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+     
         <div class="container body-content">
+
+            <div id="leftContent">
+                <p>
+                    <asp:Label ID="DateDisplay" runat="server"></asp:Label>
+                </p>
+                <h3>Lessons</h3>
+                <ul>
+                    <li>TODO</li>
+                </ul>
+                <h3>News</h3>
+                <ul>
+                    <li>TODO</li>
+                </ul>
+            </div>
+
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
-            </asp:ContentPlaceHolder>
-            <hr />
+            </asp:ContentPlaceHolder> 
+         
+ 
             <footer>
                 <p>&copy; <%: DateTime.Now.Year %> - Meu aplicativo ASP.NET</p>
             </footer>

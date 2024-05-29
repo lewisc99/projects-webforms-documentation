@@ -11,16 +11,7 @@ namespace masterPage
 {
 
 
-    public partial class _Default
+    public partial class AboutContent
     {
-
-        /// <summary>
-        /// Controle AboutContent.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Para modificar, mova a declaração de campo do arquivo de designer a um arquivo code-behind.
-        /// </remarks>
-        protected global::masterPage.AboutContent AboutContent;
     }
 }
