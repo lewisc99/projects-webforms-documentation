@@ -11,3 +11,6 @@
  page-by-page basis.</li>
     </ul>
 </asp:Content>
+<asp:Content ID="Content4" ContentPlaceHolderID="QuickLoginUI" runat="server" Visible="true">
+    Login
+</asp:Content>
